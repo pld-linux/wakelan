@@ -1,5 +1,5 @@
 Summary:	wakelan - send a wake-on-lan packet
-Summary(pl):	wakelan - wysyla pakiet WOL
+Summary(pl):	wakelan - wysy³a pakiet WOL
 Name:		wakelan
 Version:	1.1
 Release:	1
@@ -10,34 +10,41 @@ Group(es):	Red/Utilitarios
 Group(pl):	Sieciowe/Narzêdzia
 Group(pt_BR):	Rede/Utilitários
 Source0:	ftp://sunsite.unc.edu/pub/Linux/system/Network/misc/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-WakeLan sends a properly formatted UDP packet across the network which will
-cause a wake-on-lan enabled computer to power on.
+WakeLan sends a properly formatted UDP packet across the network which
+will cause a wake-on-lan enabled computer to power on.
 
-%description(pl)
-WakeLan wysyla pakiet UDP przez siec ktory powoduje wlaczenie
-komputera z WOL
+%description -l pl
+WakeLan wysy³a pakiet UDP przez sieæ, który powoduje w³±czenie
+komputera z WOL.
 
 %prep
 %setup -q
 
 %build
-CFLAGS="%{rpmcflags}" ./configure
+autoconf
+%configure
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_prefix}/man/man1
-install -d $RPM_BUILD_ROOT%{_bindir}
-%{__make} prefix=$RPM_BUILD_ROOT%{_prefix} install
+install -d $RPM_BUILD_ROOT{%{_mandir}/man1,%{_bindir}}
+
+%{__make} install \
+	bindir=$RPM_BUILD_ROOT%{_bindir} \
+	mandir=$RPM_BUILD_ROOT%{_mandir}
+
+gzip -9nf README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README COPYING
+%doc *.gz
 %attr(755,root,root) %{_bindir}/*
-%{_prefix}/man/man1/*
+%{_mandir}/man1/*
