@@ -5,7 +5,7 @@ Version:	1.1
 Release:	2
 License:	GPL
 Group:		Networking/Utilities
-Source0:	ftp://sunsite.unc.edu/pub/Linux/system/Network/misc/%{name}-%{version}.tar.gz
+Source0:	ftp://sunsite.unc.edu/pub/Linux/system/network/misc/%{name}-%{version}.tar.gz
 BuildRequires:	autoconf
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
