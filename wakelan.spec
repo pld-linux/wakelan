@@ -21,7 +21,7 @@ komputera z WOL.
 %setup -q
 
 %build
-autoconf
+%{__autoconf}
 %configure
 
 %{__make}
