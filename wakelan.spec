@@ -8,7 +8,7 @@ Group:		Networking/Utilities
 Source0:	ftp://sunsite.unc.edu/pub/Linux/system/network/misc/%{name}-%{version}.tar.gz
 # Source0-md5:	4a3a31d874967cd6ac761b7d4323e0d5
 BuildRequires:	autoconf
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 WakeLan sends a properly formatted UDP packet across the network which
