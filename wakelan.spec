@@ -2,7 +2,7 @@ Summary:	wakelan - send a wake-on-lan packet
 Summary(pl):	wakelan - wysy³a pakiet WOL
 Name:		wakelan
 Version:	1.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		Networking/Utilities
 Source0:	ftp://sunsite.unc.edu/pub/Linux/system/network/misc/%{name}-%{version}.tar.gz
