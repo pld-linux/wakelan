@@ -2,7 +2,7 @@ Summary:	wakelan - send a wake-on-lan packet
 Summary(pl):	wakelan - wysy³a pakiet WOL
 Name:		wakelan
 Version:	1.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Networking/Utilities
 Source0:	ftp://sunsite.unc.edu/pub/Linux/system/Network/misc/%{name}-%{version}.tar.gz
@@ -34,13 +34,11 @@ install -d $RPM_BUILD_ROOT{%{_mandir}/man1,%{_bindir}}
 	bindir=$RPM_BUILD_ROOT%{_bindir} \
 	mandir=$RPM_BUILD_ROOT%{_mandir}
 
-gzip -9nf README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
