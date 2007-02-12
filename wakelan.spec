@@ -1,5 +1,5 @@
 Summary:	wakelan - send a wake-on-lan packet
-Summary(pl):	wakelan - wysy³a pakiet WOL
+Summary(pl.UTF-8):   wakelan - wysyÅ‚a pakiet WOL
 Name:		wakelan
 Version:	1.1
 Release:	3
@@ -14,8 +14,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 WakeLan sends a properly formatted UDP packet across the network which
 will cause a wake-on-lan enabled computer to power on.
 
-%description -l pl
-WakeLan wysy³a pakiet UDP przez sieæ, który powoduje w³±czenie
+%description -l pl.UTF-8
+WakeLan wysyÅ‚a pakiet UDP przez sieÄ‡, ktÃ³ry powoduje wÅ‚Ä…czenie
 komputera z WOL.
 
 %prep
