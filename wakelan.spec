@@ -1,5 +1,5 @@
 Summary:	wakelan - send a wake-on-lan packet
-Summary(pl.UTF-8):   wakelan - wysyła pakiet WOL
+Summary(pl.UTF-8):	wakelan - wysyła pakiet WOL
 Name:		wakelan
 Version:	1.1
 Release:	3
