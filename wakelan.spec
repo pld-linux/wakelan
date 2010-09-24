@@ -2,11 +2,12 @@ Summary:	wakelan - send a wake-on-lan packet
 Summary(pl.UTF-8):	wakelan - wysyła pakiet WOL
 Name:		wakelan
 Version:	1.1
-Release:	4
+Release:	5
 License:	GPL
 Group:		Networking/Utilities
 Source0:	ftp://sunsite.unc.edu/pub/Linux/system/network/misc/%{name}-%{version}.tar.gz
 # Source0-md5:	4a3a31d874967cd6ac761b7d4323e0d5
+Patch0:		%{name}-build.patch
 BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -20,6 +21,7 @@ komputera z WOL.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__autoconf}
