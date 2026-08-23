@@ -1,12 +1,17 @@
 diff -urN wakelan-1.1.org/wakelan.c wakelan-1.1/wakelan.c
 --- wakelan-1.1.org/wakelan.c	1998-08-30 09:56:57.000000000 +0200
-+++ wakelan-1.1/wakelan.c	2010-09-24 20:39:44.201892839 +0200
-@@ -20,6 +20,8 @@
++++ wakelan-1.1/wakelan.c	2026-08-23 21:21:27.262162857 +0200
+@@ -19,9 +19,13 @@
+  */
  
  #include "config.h"
++#include <ctype.h>
  #include <stdio.h>
-+#include <string.h>
 +#include <stdlib.h>
++#include <string.h>
  #include <netdb.h>
  #include <netinet/in.h>
++#include <arpa/inet.h>
  #include <sys/socket.h>
+ #ifdef HAVE_GETOPT_H
+ #include <getopt.h>

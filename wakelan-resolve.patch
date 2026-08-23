@@ -1,0 +1,14 @@
+diff -urN wakelan-1.1.org/wakelan.c wakelan-1.1/wakelan.c
+--- wakelan-1.1.org/wakelan.c	2026-08-23 21:21:27.262162857 +0200
++++ wakelan-1.1/wakelan.c	2026-08-23 21:21:43.127044338 +0200
+@@ -145,6 +145,10 @@
+ 
+     if (!inet_aton(target, &inaddr)) {
+ 	he = gethostbyname(target);
++	if (he == NULL) {
++	    printf ("Can't resolve '%s'\n", target);
++	    exit (1);
++	}
+ 	inaddr = *(struct in_addr *)he->h_addr_list[0];
+     }
+ 
